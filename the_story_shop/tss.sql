@@ -118,7 +118,7 @@ CREATE TABLE orders
 
 -- OrderItems Start
 
-CREATE TABLE order-items 
+CREATE TABLE order_items 
 (
     order_items_id int not null auto_increment primary key,
     order_id int not null,
@@ -139,7 +139,7 @@ CREATE TABLE rentals
     user_id int not null,
     book_id int not null,
     rental_date datetime not null,
-    return date datetime null,
+    return_date datetime null,
     rental_fee int not null default 5,
     total_paid int not null,
     constraint fk_rentals_users foreign key (user_id) references users (user_id),
@@ -163,7 +163,7 @@ CREATE TABLE premiums
 
 -- GenreFavourites Start
 
-CREATE TABLE genre-favourites 
+CREATE TABLE genre_favourites 
 (
     genre_favourite_id int not null auto_increment primary key,
     genre_id int not null,
@@ -176,7 +176,7 @@ CREATE TABLE genre-favourites
 
 -- PremiumStatus Start
 
-CREATE TABLE premium-status 
+CREATE TABLE premium_status 
 (
     premium_status_id int not null auto_increment primary key,
     premium_id int not null,
