@@ -1,12 +1,12 @@
 -- Database Start
-
+-- D
 CREATE DATABASE tss;
 USE DATABASE tss;
 
 -- Database End
 
 -- Admins Start
-
+-- D
 CREATE TABLE admins 
 (
     admin_id int not null auto_increment primary key,
@@ -18,7 +18,7 @@ CREATE TABLE admins
 -- Admins End 
 
 -- Users Start
-
+-- D
 CREATE TABLE users
 (
     user_id int not null auto_increment primary key,
@@ -42,7 +42,7 @@ CREATE TABLE users
 -- Users End
 
 -- Countries Start
-
+-- D
 CREATE TABLE countries
 (
     country_id int not null auto_increment primary key,
@@ -52,7 +52,7 @@ CREATE TABLE countries
 -- Countries End
 
 -- Status Start
-
+-- D
 CREATE TABLE status
 (
     status_id int not null auto_increment primary key,
@@ -66,7 +66,7 @@ INSERT into status
 -- Status End
 
 -- Genres Start
-
+-- D
 CREATE TABLE genres 
 (
     genre_id int not null auto_increment primary key,
@@ -80,7 +80,7 @@ INSERT into genres
 -- Genres End
 
 -- Books Start
-
+-- D
 CREATE TABLE books 
 (
     book_id int not null auto_increment primary key,
@@ -90,7 +90,7 @@ CREATE TABLE books
     price int not null,
     available_copies int not null default 0,
     total_copies int not null default 0,
-    publish_date datetime null;
+    publish_date datetime null,
     description char(255) not null,
     date datetime not null,
     user_id int not null,
@@ -103,7 +103,7 @@ CREATE TABLE books
 -- Books End
 
 -- Orders Start
-
+-- D
 CREATE TABLE orders 
 (
     order_id int not null auto_increment primary key,
@@ -117,7 +117,7 @@ CREATE TABLE orders
 -- Orders End
 
 -- OrderItems Start
-
+-- D
 CREATE TABLE order_items 
 (
     order_items_id int not null auto_increment primary key,
@@ -132,7 +132,7 @@ CREATE TABLE order_items
 -- OrderItems End
 
 -- Rentals Start
-
+-- D
 CREATE TABLE rentals
 (
     rental_id int not null auto_increment primary key,
@@ -149,7 +149,7 @@ CREATE TABLE rentals
 -- Rentals End
 
 -- Premiums Start
-
+-- D
 CREATE TABLE premiums
 (
     premium_id int not null auto_increment primary key,
@@ -162,7 +162,7 @@ CREATE TABLE premiums
 -- Premiums End
 
 -- GenreFavourites Start
-
+-- D
 CREATE TABLE genre_favourites 
 (
     genre_favourite_id int not null auto_increment primary key,
@@ -175,7 +175,7 @@ CREATE TABLE genre_favourites
 -- GenreFavourites End
 
 -- PremiumStatus Start
-
+-- D
 CREATE TABLE premium_status 
 (
     premium_status_id int not null auto_increment primary key,
@@ -190,14 +190,14 @@ CREATE TABLE premium_status
 -- PremiumStatus End
 
 -- Wishlists Start
-
+-- D
 CREATE TABLE wishlists 
 (
     wishlist_id int not null auto_increment primary key,
     user_id int not null,
     book_id int not null,
     constraint fk_wishlists_users foreign key (user_id) references users (user_id),
-    constraint fk_wishlists_books foreign key (book_id) refernces books (book_id) 
+    constraint fk_wishlists_books foreign key (book_id) references books (book_id) 
 );
 
 -- Wishlists End
